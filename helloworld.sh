@@ -1,7 +1,6 @@
-#!/bin/bash
+var1=10
+var2=20
 
-# Add two numeric value
-((sum=25+35))
+sum=$(($var1 + $var2))
 
-#Print the result
 echo $sum
