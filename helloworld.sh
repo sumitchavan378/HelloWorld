@@ -1,1 +1,1 @@
-echo "This is Jon Snow"
+echo "This is Jon Snow and I know everything"
