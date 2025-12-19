@@ -8,6 +8,7 @@ on:
 jobs:
   hello:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Print greeting
         run: echo "Hello, world 👋"
