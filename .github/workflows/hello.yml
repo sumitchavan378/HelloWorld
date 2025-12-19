@@ -1,7 +1,6 @@
 name: Say Hello          # Workflow name (shows up in the Actions tab)
 
 on:
-  workflow_dispatch:     # Lets you run it manually from the UI
   push:                  # …or automatically whenever you push
     branches:
       - master
