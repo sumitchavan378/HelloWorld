@@ -3,7 +3,7 @@ name: Validate Jira Impact Areas
 on:
   pull_request:
     branches:
-      - qa
+      - master
     types: [opened, edited, synchronize, reopened]
 
 jobs:
