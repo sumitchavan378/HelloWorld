@@ -1,0 +1,27 @@
+name: Validate Jira Impact Areas
+
+on:
+  pull_request:
+    branches:
+      - qa
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  jira-impact-check:
+    name: Jira Impact Areas Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Run Jira Impact Validation Script
+        run: bash .github/scripts/jira_check.sh
+        env:
+          JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
